@@ -1,1 +1,1 @@
-This project contains two files each containing SHA-bang files
+This project contains scripts each containing SHA-bang files
