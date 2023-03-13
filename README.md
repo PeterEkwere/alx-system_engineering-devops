@@ -1,1 +1,1 @@
-This repository contains basic shell project
+This is a repository that contains basic shell project 
