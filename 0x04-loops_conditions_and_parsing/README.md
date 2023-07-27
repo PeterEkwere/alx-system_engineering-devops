@@ -1,1 +1,1 @@
-This is a Repo on basics of devops
+This is a repo on basics of devops
