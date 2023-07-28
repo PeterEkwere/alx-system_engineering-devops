@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This is a script that that returns its pid
+
+
+pid=$$
+
+echo $pid
