@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# displays  a string and sleeps 2 sec every iteration
+
+i=0
+while ((i < 10))
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
