@@ -2,9 +2,9 @@
 # This Best School 10 times, but for the 9th iteration, displays Best School
 
 i=0
-while ((i < 10))
+while ((i <= 10))
 do
-	if [ "$i" == "8" ]
+	if ((i == 9))
 	then
 		echo "Hi"
 		((i++))
