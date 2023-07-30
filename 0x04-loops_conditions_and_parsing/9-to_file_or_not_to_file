@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
-# This  script that displays the time for 12 hours and 59 minutes
+# This  script that gives you information about the school file.
 
 
-min=1
-hour=0
-echo "Hour: $hour"
-while ((hour < 12))
-do
-	while ((min < 60))
-	do
-		echo "$min"
-		((min++))
-	done
-	min=1
-	((++hour))
-	echo "Hour: $hour"
-done
+file="school"
+
+if [ -e $file ]
+then
+	echo "school file exist"
+	
+	if [ ! -s $file ]
+	then
+		echo "school file is empty"
+	else
+		echo "school file is not empty"
+	fi
+
+	if [ -f $file ]
+	then
+		echo "school file is a regular file"
+	fi
+else
+	echo "school file does not exist"
+fi
