@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This  script that displays the time for 12 hours and 59 minutes
 
-list=$(ls | cut -d '-' -f 2)
+list=$(find "." | cut -d '-' -f 2)
 for file in $list
 do
 	echo "$file"
