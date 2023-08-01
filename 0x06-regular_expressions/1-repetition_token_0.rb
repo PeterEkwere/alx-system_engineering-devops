@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
-puts ARGV[0].scan(/hbt{2}*n/).join
+name = ARGV[0]
+
+regex = /hbt{2,}n/
+if name =~ regex
+  puts "#{name}"
+end
