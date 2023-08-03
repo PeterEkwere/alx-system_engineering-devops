@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script returns the listening ports with all the pid of all sockets
+
+netstat -tulnp
