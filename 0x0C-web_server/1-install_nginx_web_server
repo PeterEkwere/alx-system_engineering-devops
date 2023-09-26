@@ -1,17 +1,7 @@
 #!/usr/bin/env bash
-# This script creates a new ubuntu machine with all config
+# This script creates a new ubuntu machine with all config with nginx
 
-sudo apt update
-sudo apt install -y nginx
-
-sudo sh -c 'echo "Hello world" > /var/www/html/index.html'
-sudo ufw allow 'Nginx HTTP'
-echo  "server {
-     listen     80 default_server;
-     listen     [::]:80 default_server;
-     root       /var/www/html;
-     index      index.html index.htm;
-}" | sudo tee /etc/nginx/sites-available/default > /dev/null
-
-
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 sudo service nginx restart
