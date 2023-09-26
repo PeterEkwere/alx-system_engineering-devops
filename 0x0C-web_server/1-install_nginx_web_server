@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+sudo apt update
+sudo apt install -y nginx
+
+sudo sh -c 'echo "Hello from script!" > /var/www/html/success.html'
+
+echo  "server {
+     listen     80 default_server;
+     listen     [::]:80 default_server;
+     root       /var/www/html;
+     index      success.html success.htm;
+}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+
+sudo service nginx restart
+
+curl localhost
+
+if curl -s localhost | grep -q "Hello from script!"; then
+        echo "Nginx configuration is successfull"
+else
+        echo "Nginx config failed"
+fi
