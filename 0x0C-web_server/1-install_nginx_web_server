@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # This script creates a new ubuntu machine with all config with nginx
-
 sudo apt-get -y update
 sudo apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
