@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script creates a new ubuntu machine with all config
 
 sudo apt update
 sudo apt install -y nginx
@@ -15,9 +16,3 @@ echo  "server {
 sudo service nginx restart
 
 curl localhost
-
-if curl -s localhost | grep -q "Hello from script!"; then
-        echo "Nginx configuration is successfull"
-else
-        echo "Nginx config failed"
-fi
