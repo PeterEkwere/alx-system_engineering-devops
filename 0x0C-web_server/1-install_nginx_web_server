@@ -13,4 +13,5 @@ echo  "server {
      index      index.html index.htm;
 }" | sudo tee /etc/nginx/sites-available/default > /dev/null
 
+
 sudo service nginx restart
