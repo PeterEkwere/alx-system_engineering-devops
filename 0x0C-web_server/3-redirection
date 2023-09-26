@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script creates a new ubuntu machine with all confi
+
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+sudo sed -i '/server_name _;/a \
+        location /redirect_me { \
+                return 301 http://youtube.com/; \
+        }' /etc/nginx/sites-available/default
+
+sudo service nginx restart
