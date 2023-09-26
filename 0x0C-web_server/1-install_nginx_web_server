@@ -4,8 +4,8 @@
 sudo apt update
 sudo apt install -y nginx
 
-sudo sh -c 'echo "Hello from script!" > /var/www/html/success.html'
-
+sudo sh -c 'echo "Hello world" > /var/www/html/success.html'
+sudo ufw allow 'Nginx HTTP'
 echo  "server {
      listen     80 default_server;
      listen     [::]:80 default_server;
