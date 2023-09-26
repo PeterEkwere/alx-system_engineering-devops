@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# This script creates a new ubuntu machine with all config
-sudo apt update
-sudo apt install -y nginx
-
-
-sudo ufw allow 'Nginx HTTP'
-echo "Hello World" | sudo tee /var/www/html/index.html
-sudo service nginx restart
