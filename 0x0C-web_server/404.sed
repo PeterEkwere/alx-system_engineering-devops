@@ -4,5 +4,5 @@
 	error_page 404 /404.html;\
         location /404 {\
                 root /etc/nginx/html;\
-		internal;
+		internal;\
         }
