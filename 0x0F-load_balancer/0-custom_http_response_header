@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script creates a new ubuntu machine with all confi
+
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+sudo mkdir -p /etc/nginx/html
+sudo touch /etc/nginx/html/404.html
+sudo sh -c 'echo "Ceci n'\''est pas une page" > /etc/nginx/html/404.html'
+sudo sed -i -f insert.sed /etc/nginx/sites-available/default
+sudo sed -i -f 404.sed /etc/nginx/sites-available/default
+sudo sed -i -f head_id.sed /etc/nginx/sites-available/default
+sudo service nginx restart
