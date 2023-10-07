@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# This script creates a new ubuntu machine with all confi
-
+# This script creates a new ubuntu machine with all loadbalancer config
 
 sudo apt-get -y update
 sudo apt-get install -y haproxy

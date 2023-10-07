@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# This Script will display information about subdomains
+
+#function to get DNS Records for a subdomain
+get_dns() {
+  local domain="$1"
+  local subdomain="$2"
+  local record_type="$3"
+  local result=""
+
+  result="$(dig +short "$subdomain"."$domain" "$record_type")"
+  echo "$result"
+}
+
+
+#function to display DNS records
+display_dns() {
+  local domain="$1"
+  local subdomain="$2"
+
+
+ declare -A subdomains=(
+   [www]="A"
+   [lb-01]="A"
+   [web-01]="A"
+   [web-02]="A"
+)
+
+if [ -z "$subdomain" ]; then
+	for subs in "${!subdomains[@]}"; do
+		record_type="${subdomains[$subs]}"
+		Address=$(get_dns "$domain" "$subs" "$record_type")
+		echo "The subdomain $subs is $record_type record and points to $Address"
+	done
+else
+	record_type="${subdomains[$subdomain]}"
+	Address=$(get_dns "$domain" "$subdomain" "$record_type")
+	echo "The subdomain $subdomain is $record_type record and points to $Address"
+fi
+}
+
+
+domain="$1"
+subdomain="$2"
+
+display_dns "$domain" "$subdomain"
