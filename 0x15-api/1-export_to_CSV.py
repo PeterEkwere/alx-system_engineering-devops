@@ -28,8 +28,8 @@ if __name__ == "__main__":
                 new_data = []
                 status = user_todo[i].get("completed")
                 title = user_todo[i].get("title")
-                new_data = [f'{user_id}', f'{user_name}',
-                            f'{status}', f'{title}']
+                new_data = [user_id, user_name,
+                            status, title]
                 data.append(new_data)
             file_name = f"{user_id}.csv"
             with open(file_name, "w") as csv_file:
