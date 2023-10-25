@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 if user_todo[i].get("completed") is True:
                     done_tasks += 1
                     titles.append(user_todo[i].get("title"))
-            print(f"Employee {user_name} is done with"
+            print(f"Employee {user_name} is done with "
                   f"tasks({done_tasks}/{total_tasks}):")
             for title in titles:
                 print(f"\t {title}")
