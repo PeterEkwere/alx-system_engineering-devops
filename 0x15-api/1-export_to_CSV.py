@@ -21,7 +21,7 @@ if __name__ == "__main__":
             user_todo = user_todo.json()
             user_info = user_info.json()
 
-            user_name = user_info.get("name")
+            user_name = user_info.get("username")
             data = []
 
             for i in range(len(user_todo)):
